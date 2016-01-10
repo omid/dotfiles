@@ -1,6 +1,6 @@
-# My Dotfiles
+# My .files
 
-### Supported Software
+### Supported Softwares
 
 * ZSH
 * Tmux
