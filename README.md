@@ -7,7 +7,7 @@
 * Git
 * Axel
 
-### Basic Installation
+### Installation
 
 
 #### via curl
