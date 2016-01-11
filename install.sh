@@ -40,7 +40,7 @@ ln -sf ~/.dotfiles/zsh/zshrc ~/.zshrc
 if [ -f ~/.gitconfig ]; then
     mv ~/.gitconfig ~/.gitconfig_local
 fi
-if grep -q gitconfig_local ~/.gitconfig_local; then
+if [ -f ~/.gitconfig_local ] && [ -z $(grep -q gitconfig_local ~/.gitconfig_local) ]; then
     rm -rf ~/.gitconfig_local
 fi
 ln -sf ~/.dotfiles/gitconfig ~/.gitconfig
