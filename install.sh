@@ -27,7 +27,8 @@ if ! type axel > /dev/null; then
 fi
 
 ### clone main repository
-git clone --depth=1 https://github.com/omid/dotfiles.git ~/.dotfiles
+echo 'Cloning dotfiles...'
+git clone --depth=1 https://github.com/omid/dotfiles.git ~/.dotfiles > /dev/null
 
 ### ZSH
 if [ ! -f ~/.zsh_local ]; then
