@@ -60,7 +60,13 @@ plugins=(git command-not-found tmux autojump docker postgres redis-cli vagrant c
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 # export MANPATH="/usr/local/man:$MANPATH"
 
+if [ -f ~/.zsh_local ]; then
+    source ~/.zsh_local
+fi
+
 source $ZSH/oh-my-zsh.sh
+
+bindkey '^i' expand-or-complete-prefix
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
