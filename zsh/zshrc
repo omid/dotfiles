@@ -57,9 +57,6 @@ plugins=(git command-not-found tmux autojump docker postgres redis-cli vagrant c
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
-# export MANPATH="/usr/local/man:$MANPATH"
-
 if [ -f ~/.zsh_local ]; then
     source ~/.zsh_local
 fi

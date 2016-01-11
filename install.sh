@@ -5,7 +5,28 @@ if [ -f ~/.dotfiles ]; then
     exit
 fi;
 
-# clone main repository
+### check dependencies
+if ! type git > /dev/null; then
+    echo 'Please install git before starting'
+    exit
+fi
+
+if ! type zsh > /dev/null; then
+    echo 'Please install zsh before starting'
+    exit
+fi
+
+if ! type tmux > /dev/null; then
+    echo 'Please install tmux before starting'
+    exit
+fi
+
+if ! type axel > /dev/null; then
+    echo 'Please install axel before starting'
+    exit
+fi
+
+### clone main repository
 git clone --depth=1 https://github.com/omid/dotfiles.git ~/.dotfiles
 
 ### ZSH
@@ -17,6 +38,9 @@ ln -sf ~/.dotfiles/zsh/zshrc ~/.zshrc
 ### GIT
 if [ -f ~/.gitconfig ]; then
     mv ~/.gitconfig ~/.gitconfig_local
+fi
+if grep -q gitconfig_local ~/.gitconfig_local; then
+    rm -rf ~/.gitconfig_local
 fi
 ln -sf ~/.dotfiles/gitconfig ~/.gitconfig
 
