@@ -3,7 +3,7 @@ export ZSH=~/.dotfiles/zsh/oh-my-zsh
 
 if [ ! -d "$ZSH" ]; then
     echo 'Cloning Oh-My-Zsh... because it is the first time you are using ZSH'
-    git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git "$ZSH" > /dev/null
+    git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git "$ZSH" &> /dev/null
 fi
 
 # Set name of the theme to load.

@@ -28,11 +28,11 @@ fi
 
 ### clone main repository
 echo 'Cloning dotfiles...'
-git clone --depth=1 https://github.com/omid/dotfiles.git ~/.dotfiles > /dev/null
+git clone --depth=1 https://github.com/omid/dotfiles.git ~/.dotfiles &> /dev/null
 
 ### ZSH
 if [ ! -f ~/.zsh_local ]; then
-    cp ~/.dotfiles/zsh/zsh_local ~/.zsh_local
+    echo '# Put your local ZSH changes and configs here' > ~/.zsh_local
 fi
 ln -sf ~/.dotfiles/zsh/zshrc ~/.zshrc
 
@@ -42,6 +42,9 @@ if [ -f ~/.gitconfig ]; then
 fi
 if [ -f ~/.gitconfig_local ] && [ -z $(grep -q gitconfig_local ~/.gitconfig_local) ]; then
     rm -rf ~/.gitconfig_local
+fi
+if [ ! -f ~/.git_local ]; then
+    echo '# Put your local Git changes and configs here' > ~/.git_local
 fi
 ln -sf ~/.dotfiles/gitconfig ~/.gitconfig
 
