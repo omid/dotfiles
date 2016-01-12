@@ -28,7 +28,7 @@ fi
 
 ### clone main repository
 echo 'Cloning dotfiles...'
-git clone --depth=1 https://github.com/omid/dotfiles.git ~/.dotfiles &> /dev/null
+git clone -q --depth=1 https://github.com/omid/dotfiles.git ~/.dotfiles
 
 ### ZSH
 if [ ! -f ~/.zsh_local ]; then
