@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ -f ~/.dotfiles ]; then
+if [ -d ~/.dotfiles ]; then
     echo 'Please remove or rename "~/.dotfiles" directory" first'
     exit
 fi;
@@ -26,6 +26,11 @@ if ! type axel > /dev/null; then
     exit
 fi
 
+if ! type autojump > /dev/null; then
+    echo 'Please install autojump before starting'
+    exit
+fi
+
 ### clone main repository
 echo 'Cloning dotfiles...'
 git clone -q --depth=1 https://github.com/omid/dotfiles.git ~/.dotfiles
@@ -40,11 +45,11 @@ ln -sf ~/.dotfiles/zsh/zshrc ~/.zshrc
 if [ -f ~/.gitconfig ]; then
     mv ~/.gitconfig ~/.gitconfig_local
 fi
-if [ -f ~/.gitconfig_local ] && [ -z $(grep -q gitconfig_local ~/.gitconfig_local) ]; then
+if [ -f ~/.gitconfig_local ] && [ $(grep -q gitconfig_local ~/.gitconfig_local) ]; then
     rm -rf ~/.gitconfig_local
 fi
-if [ ! -f ~/.git_local ]; then
-    echo '# Put your local Git changes and configs here' > ~/.git_local
+if [ ! -f ~/.gitconfig_local ]; then
+    echo '# Put your local Git changes and configs here' > ~/.gitconfig_local
 fi
 ln -sf ~/.dotfiles/gitconfig ~/.gitconfig
 
