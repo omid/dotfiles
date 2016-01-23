@@ -70,6 +70,7 @@ bindkey '^i' expand-or-complete-prefix
 # export LANG=en_US.UTF-8
 
 export EDITOR=nano
+alias e=$EDITOR
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
