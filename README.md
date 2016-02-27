@@ -6,6 +6,7 @@
 * Tmux
 * Git
 * Axel
+* Wget
 
 ### Installation
 

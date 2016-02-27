@@ -59,6 +59,9 @@ ln -sf ~/.dotfiles/tmux.conf ~/.tmux.conf
 ### AXEL
 ln -sf ~/.dotfiles/axelrc ~/.axelrc
 
+### WGET
+ln -sf ~/.dotfiles/wgetrc ~/.wgetrc
+
 
 ### finalize
 echo 'Finished. To change your default shell to ZSH, run "chsh -s $(grep /zsh$ /etc/shells | tail -1)"'
