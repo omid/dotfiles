@@ -99,4 +99,4 @@
 
 # Allow local customizations in the .gitconfig_local file
 [include]
-	path = ~/.git_local
+	path = ~/.gitconfig_local
