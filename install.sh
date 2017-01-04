@@ -17,18 +17,19 @@ if ! type zsh > /dev/null; then
 fi
 
 if ! type tmux > /dev/null; then
-    echo 'Please install tmux before starting'
-    exit
+    echo 'I suggest to install tmux'
 fi
 
 if ! type axel > /dev/null; then
-    echo 'Please install axel before starting'
-    exit
+    echo 'I suggest to install axel'
 fi
 
 if ! type autojump > /dev/null; then
-    echo 'Please install autojump before starting'
-    exit
+    echo 'I suggest to install autojump'
+fi
+
+if ! type autojump > /dev/null; then
+    echo 'I suggest to install thefuck'
 fi
 
 ### clone main repository
