@@ -28,10 +28,6 @@ if ! type autojump > /dev/null; then
     echo 'I suggest to install autojump'
 fi
 
-if ! type autojump > /dev/null; then
-    echo 'I suggest to install thefuck'
-fi
-
 ### clone main repository
 echo 'Cloning dotfiles...'
 git clone -q --depth=1 https://github.com/omid/dotfiles.git ~/.dotfiles
