@@ -16,16 +16,25 @@ if ! type zsh > /dev/null; then
     exit
 fi
 
+if ! type wget > /dev/null; then
+    echo 'Please install wget before starting'
+    exit
+fi
+
 if ! type tmux > /dev/null; then
-    echo 'I suggest to install tmux'
+    echo 'You can install tmux'
 fi
 
 if ! type axel > /dev/null; then
-    echo 'I suggest to install axel'
+    echo 'You can install axel'
 fi
 
 if ! type autojump > /dev/null; then
-    echo 'I suggest to install autojump'
+    echo 'You can install autojump'
+fi
+
+if ! type az > /dev/null; then
+    echo 'You can install azure-cli'
 fi
 
 ### clone main repository

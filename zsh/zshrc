@@ -1,9 +1,14 @@
 # Path to your oh-my-zsh installation.
 export ZSH=~/.dotfiles/zsh/oh-my-zsh
+export AZ_COMP=~/.dotfiles/az.completion
 
 if [ ! -d "$ZSH" ]; then
     echo 'Cloning Oh-My-Zsh... because it is the first time you are using ZSH'
     git clone -q --depth=1 https://github.com/robbyrussell/oh-my-zsh.git "$ZSH"
+fi
+
+if [ ! -f "$AZ_COMP" ]; then
+    wget https://raw.githubusercontent.com/Azure/azure-cli/dev/az.completion -O "$AZ_COMP"
 fi
 
 # Set name of the theme to load.
@@ -86,3 +91,9 @@ alias e=$EDITOR
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+autoload -U +X bashcompinit && bashcompinit
+
+# load azure cli auto-completion
+source "$AZ_COMP"
+
