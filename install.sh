@@ -21,6 +21,10 @@ if ! type wget > /dev/null; then
     exit
 fi
 
+if ! type git-extras > /dev/null; then
+    echo 'You can install git-extras'
+fi
+
 if ! type tmux > /dev/null; then
     echo 'You can install tmux'
 fi
