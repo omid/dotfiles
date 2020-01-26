@@ -108,10 +108,4 @@ autoload -U +X bashcompinit && bashcompinit
 # load azure cli auto-completion
 source "$AZ_COMP"
 
-# load forgit plugin
-#source ${ZSH_PLUGIN_PATH_FORGIT}/forgit.plugin.zsh
-
-# add Pulumi to the PATH
-export PATH=$PATH:$HOME/.pulumi/bin
-
 alias ls=exa
