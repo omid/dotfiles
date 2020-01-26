@@ -21,6 +21,11 @@ if ! type wget > /dev/null; then
     exit
 fi
 
+if ! type exa > /dev/null; then
+    echo 'Please install exa'
+    exit
+fi
+
 if ! type git-extras > /dev/null; then
     echo 'You can install git-extras'
 fi
@@ -39,6 +44,10 @@ fi
 
 if ! type az > /dev/null; then
     echo 'You can install azure-cli'
+fi
+
+if ! type fd > /dev/null; then
+    echo 'You can install fd'
 fi
 
 ### clone main repository

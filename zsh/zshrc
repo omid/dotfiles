@@ -1,14 +1,25 @@
 # Path to your oh-my-zsh installation.
 export ZSH=~/.dotfiles/zsh/oh-my-zsh
 export AZ_COMP=~/.dotfiles/az.completion
+export ZSH_PLUGIN_PATH_AUTOSUGG="$ZSH/plugins/zsh-autosuggestions"
+export ZSH_PLUGIN_PATH_FORGIT="$ZSH/plugins/forgit"
 
 if [ ! -d "$ZSH" ]; then
     echo 'Cloning Oh-My-Zsh... because it is the first time you are using ZSH'
-    git clone -q --depth=1 https://github.com/robbyrussell/oh-my-zsh.git "$ZSH"
+    git clone -q --depth=1 https://github.com/robbyrussell/oh-my-zsh.git "$ZSH" > /dev/null
 fi
 
 if [ ! -f "$AZ_COMP" ]; then
     wget https://raw.githubusercontent.com/Azure/azure-cli/dev/az.completion -O "$AZ_COMP"
+fi
+
+if [ ! -d "$ZSH_PLUGIN_PATH_AUTOSUGG" ]; then
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_PLUGIN_PATH_AUTOSUGG} > /dev/null
+fi
+
+if [ ! -d "$ZSH_PLUGIN_PATH_FORGIT" ]; then
+    mkdir ${ZSH_PLUGIN_PATH_FORGIT}
+    curl -Ss https://raw.githubusercontent.com/wfxr/forgit/master/forgit.plugin.zsh -o ${ZSH_PLUGIN_PATH_FORGIT}/forgit.plugin.zsh
 fi
 
 # Set name of the theme to load.
@@ -59,7 +70,7 @@ ZSH_THEME="gnzh"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git command-not-found gpg-agent tmux autojump docker docker-compose postgres redis-cli composer archlinux systemd sudo supervisor history cp adb ant bower bundler npm node man pip python ruby rvm rust z symfony symfony2 kubectl cargo git-extras fzf minikube)
+plugins=(git command-not-found gpg-agent tmux autojump docker docker-compose postgres redis-cli composer archlinux systemd sudo supervisor history cp adb ant bower bundler npm node man pip python ruby rvm rust z symfony symfony2 kubectl cargo git-extras fzf aws minikube terraform zsh-autosuggestions forgit)
 
 # User configuration
 
@@ -97,3 +108,10 @@ autoload -U +X bashcompinit && bashcompinit
 # load azure cli auto-completion
 source "$AZ_COMP"
 
+# load forgit plugin
+#source ${ZSH_PLUGIN_PATH_FORGIT}/forgit.plugin.zsh
+
+# add Pulumi to the PATH
+export PATH=$PATH:$HOME/.pulumi/bin
+
+alias ls=exa
