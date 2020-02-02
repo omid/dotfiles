@@ -108,4 +108,4 @@ autoload -U +X bashcompinit && bashcompinit
 # load azure cli auto-completion
 source "$AZ_COMP"
 
-alias ls=exa
+alias ls='exa -g'
