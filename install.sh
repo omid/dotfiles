@@ -26,6 +26,11 @@ if ! type exa > /dev/null; then
     exit
 fi
 
+if ! type bat > /dev/null; then
+    echo 'Please install bat'
+    exit
+fi
+
 if ! type git-extras > /dev/null; then
     echo 'You can install git-extras'
 fi

@@ -108,4 +108,10 @@ autoload -U +X bashcompinit && bashcompinit
 # load azure cli auto-completion
 source "$AZ_COMP"
 
-alias ls='exa -g'
+if type exa > /dev/null; then
+    alias ls='exa -g'
+fi
+
+if type bat > /dev/null; then
+    alias cat='bat'
+fi
