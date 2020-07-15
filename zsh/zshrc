@@ -70,7 +70,7 @@ ZSH_THEME="gnzh"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git command-not-found gpg-agent tmux autojump docker docker-compose postgres redis-cli composer archlinux systemd sudo supervisor history cp adb ant bower bundler npm node man pip python ruby rvm rust z symfony2 kubectl cargo git-extras fzf aws minikube terraform zsh-autosuggestions forgit)
+plugins=(git command-not-found gpg-agent tmux autojump docker docker-compose postgres redis-cli composer archlinux systemd sudo supervisor history cp adb ant bower bundler npm node man pip python ruby rvm rust z symfony2 kubectl cargo git-extras fzf aws minikube terraform helm zsh-autosuggestions forgit)
 
 # User configuration
 
