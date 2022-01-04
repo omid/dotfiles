@@ -103,3 +103,5 @@
 [user]
 	email = omidmr@gmail.com
 	name = Omid Rad
+[init]
+	defaultBranch = master
