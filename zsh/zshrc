@@ -115,3 +115,6 @@ fi
 if type bat > /dev/null; then
     alias cat='bat'
 fi
+
+export PNPM_HOME="/home/omid/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
